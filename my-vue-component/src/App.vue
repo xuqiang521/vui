@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <dropdown-test></dropdown-test>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-
+import DropdownTest from './components/dropdown-test'
 export default {
   name: 'app',
   components: {
-    Hello
+    DropdownTest
   }
 }
 </script>
