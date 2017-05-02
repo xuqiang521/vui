@@ -1,11 +1,12 @@
-# vue-drop-down
+# my-vue-components
 
 > drop-down-components
 
 ## Build Setup
 
 ``` bash
-cd vue-drop-down/
+# 进入项目目录
+cd my-vue-components/
 
 # install dependencies
 npm install
