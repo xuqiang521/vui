@@ -5,8 +5,6 @@
 ## Build Setup
 
 ``` bash
-cd vue-drop-down/
-
 # install dependencies
 npm install
 
