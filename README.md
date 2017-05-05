@@ -23,6 +23,6 @@ npm run build --report
 
 ## vue部分源码分析
 
->vue-part.js
+> [vue-part.js](./my-vue-components/vue-part.js)
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
