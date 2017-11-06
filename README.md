@@ -1,13 +1,10 @@
-# my-vue-components
+# vue-drop-down
 
 > drop-down-components
 
 ## Build Setup
 
 ``` bash
-# 进入项目目录
-cd my-vue-components/
-
 # install dependencies
 npm install
 
@@ -23,6 +20,4 @@ npm run build --report
 
 ## vue部分源码分析
 
-[vue-part.js](https://github.com/xuqiang521/dropdown/blob/master/my-vue-component/vue-part.js)
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[vue-part.js](https://github.com/xuqiang521/my-element-ui/blob/master/vue-part.js)

@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <dropdown-test></dropdown-test>
+    <x-dropdown></x-dropdown>
+    <x-swiper></x-swiper>
   </div>
 </template>
 
 <script>
-import DropdownTest from './components/dropdown-test'
+import XDropdown from './pages/dropdown'
+import XSwiper from './pages/swiper'
 export default {
   name: 'app',
   components: {
-    DropdownTest
+    XDropdown,
+    XSwiper
   }
 }
 </script>
@@ -21,6 +24,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  min-height: 100%;
+  margin-top: 20px;
 }
 </style>
