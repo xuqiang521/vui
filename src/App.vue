@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <x-scroller></x-scroller>
     <x-dropdown></x-dropdown>
     <x-swiper></x-swiper>
   </div>
@@ -8,11 +9,13 @@
 <script>
 import XDropdown from './pages/dropdown'
 import XSwiper from './pages/swiper'
+import XScroller from './pages/scroller'
 export default {
   name: 'app',
   components: {
     XDropdown,
-    XSwiper
+    XSwiper,
+    XScroller
   }
 }
 </script>
