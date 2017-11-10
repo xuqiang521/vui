@@ -1,5 +1,5 @@
 <style media="screen">
-.v-dropdown-menu {
+.x-dropdown-menu {
     margin: 5px 0;
     background-color: #fff;
     border: 1px solid #d1dbe5;
@@ -14,20 +14,20 @@
 ul, li {
     list-style: none;
 }
-.drop-down_link, .v-dropdown-menu_list {
+.drop-down_link, .x-dropdown-menu_list {
     cursor: pointer;
 }
 </style>
 <template>
-<ul class="v-dropdown-menu" v-show="visible">
+<ul class="x-dropdown-menu" v-show="visible">
     <slot></slot>
 </ul>
 </template>
 
 <script>
 export default {
-    name: 'VDropdownMenu',
-    componentName: 'VDropdownMenu',
+    name: 'XDropdownMenu',
+    componentName: 'XDropdownMenu',
     // 组件create的时候进行事件注册
     created () {
         this.$on('visible', val => {

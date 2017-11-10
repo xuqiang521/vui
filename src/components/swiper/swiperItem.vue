@@ -1,12 +1,12 @@
 <template>
-  <div class="y-swipe-item">
+  <div class="x-swipe-item">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'y-swipe-item',
+    name: 'x-swipe-item',
     props: {
       scale: {
         type: Boolean,

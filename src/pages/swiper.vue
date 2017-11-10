@@ -1,14 +1,14 @@
 <template>
   <div class="swiper-page">
     <p>正常swiper</p>
-    <y-swiper type='swiper' :items='items' :styles="{height: '180px'}"></y-swiper>
+    <x-swiper type='swiper' :items='items' :styles="{height: '180px'}"></x-swiper>
     <p>缩略swiper</p>
-    <y-swiper type='swiper' :items='items' :type="'thum'" :styles="{height: '208px'}"></y-swiper>
+    <x-swiper type='swiper' :items='items' :type="'thum'" :styles="{height: '208px'}"></x-swiper>
   </div>
 </template>
 
 <script>
-import YSwiper from 'components/swiper'
+import XSwiper from 'components/swiper'
 
 export default {
   data () {
@@ -23,7 +23,7 @@ export default {
 
   },
   components: {
-    YSwiper
+    XSwiper
   }
 }
 </script>

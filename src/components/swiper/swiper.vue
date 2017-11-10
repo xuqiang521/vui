@@ -1,10 +1,10 @@
 <style lang="stylus" scoped>
-.y-swipe {
+.x-swipe {
   overflow: hidden;
   position: relative;
   height: 100%;
 
-  .y-swipe-items-wrap {
+  .x-swipe-items-wrap {
     position: relative;
     overflow: hidden;
     height: 100%;
@@ -23,14 +23,14 @@
       }
   }
 
-  .y-swipe-indicators {
+  .x-swipe-indicators {
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .y-swipe-indicator {
+  .x-swipe-indicator {
     width: 8px;
     height: 8px;
     display: inline-block;
@@ -39,19 +39,19 @@
     // opacity: 0.2;
     margin: 0 3px;
   }
-  .y-swipe-indicator.is-active {
+  .x-swipe-indicator.is-active {
     opacity: 1;
     background: #9AE8E3;
   }
 }
 </style>
 <template>
-  <div class="y-swipe">
-    <div class="y-swipe-items-wrap" ref="wrap">
+  <div class="x-swipe">
+    <div class="x-swipe-items-wrap" ref="wrap">
       <slot></slot>
     </div>
-    <div class="y-swipe-indicators" v-show="showIndicators">
-      <div class="y-swipe-indicator"
+    <div class="x-swipe-indicators" v-show="showIndicators">
+      <div class="x-swipe-indicator"
         v-for="(page, $index) in pages"
         :key="$index"
         :class="{ 'is-active': $index === index }"></div>
@@ -63,7 +63,7 @@
 import { once, addClass, removeClass } from 'utils/dom';
 
 export default {
-  name: 'y-swipe',
+  name: 'x-swipe',
 
   created() {
     this.dragState = {};

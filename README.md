@@ -3,28 +3,28 @@
 ```html
 <template>
   <div class="test">
-    <v-dropdown trigger="click" @command="commandHandle" :hide-on-click="true">
+    <x-dropdown trigger="click" @command="commandHandle" :hide-on-click="true">
         <span class="drop-down_link">下拉菜单</span>
-        <v-dropdown-menu>
-            <v-dropdown-list command="a">下拉列表1</v-dropdown-list>
-            <v-dropdown-list command="b">下拉列表2</v-dropdown-list>
-            <v-dropdown-list command="c"><h4>下拉列表3</h4></v-dropdown-list>
-        </v-dropdown-menu>
-    </v-dropdown>
+        <x-dropdown-menu>
+            <x-dropdown-list command="a">下拉列表1</x-dropdown-list>
+            <x-dropdown-list command="b">下拉列表2</x-dropdown-list>
+            <x-dropdown-list command="c"><h4>下拉列表3</h4></x-dropdown-list>
+        </x-dropdown-menu>
+    </x-dropdown>
   </div>
 </template>
 
 <script>
-import VDropdown from 'components/dropdown/dropdown'
-import VDropdownMenu from 'components/dropdown/dropdown-menu'
-import VDropdownList from 'components/dropdown/dropdown-list'
+import XDropdown from 'components/dropdown/dropdown'
+import XDropdownMenu from 'components/dropdown/dropdown-menu'
+import XDropdownList from 'components/dropdown/dropdown-list'
 
 export default {
   name: 'Dropdown',
   components: {
-    VDropdown,
-    VDropdownMenu,
-    VDropdownList
+    XDropdown,
+    XDropdownMenu,
+    XDropdownList
   },
   methods: {
     commandHandle (command, instance) {
@@ -41,14 +41,14 @@ export default {
 <template>
   <div class="swiper-page">
     <p>正常swiper</p>
-    <y-swiper type='swiper' :items='items' :styles="{height: '180px'}"></y-swiper>
+    <x-swiper type='swiper' :items='items' :styles="{height: '180px'}"></x-swiper>
     <p>缩略swiper</p>
-    <y-swiper type='swiper' :items='items' :type="'thum'" :styles="{height: '208px'}"></y-swiper>
+    <x-swiper type='swiper' :items='items' :type="'thum'" :styles="{height: '208px'}"></x-swiper>
   </div>
 </template>
 
 <script>
-import YSwiper from 'components/swiper'
+import XSwiper from 'components/swiper'
 
 export default {
   data () {
@@ -60,7 +60,7 @@ export default {
     }
   },
   components: {
-    YSwiper
+    XSwiper
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <style media="screen">
-.v-dropdown {
+.x-dropdown {
     display: inline-block;
     position: relative;
     color: #48576a;
@@ -8,7 +8,7 @@
 }
 </style>
 <template>
-<div class="v-dropdown"
+<div class="x-dropdown"
     :trigger="trigger"
     :visible="visible"
     :hideOnClick="hideOnClick"
@@ -23,8 +23,8 @@
 import Clickoutside from '../../utils/clickoutside.js';
 import Emitter from '../../mixins/emitter.js';
 export default {
-    name: 'VDropdown',
-    componentName: 'VDropdown',
+    name: 'XDropdown',
+    componentName: 'XDropdown',
     mixins: [Emitter],
     // 注册指令
     directives: { Clickoutside },
@@ -88,9 +88,9 @@ export default {
         }
     },
     watch: {
-        // 向下，即VDropdownMenu组件传递visible属性并触发其回调
+        // 向下，即XDropdownMenu组件传递visible属性并触发其回调
         visible (val) {
-            this.broadcast('VDropdownMenu', 'visible', val);
+            this.broadcast('XDropdownMenu', 'visible', val);
         }
     },
     mounted () {

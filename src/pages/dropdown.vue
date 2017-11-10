@@ -1,27 +1,27 @@
 <template>
   <div class="test">
-    <v-dropdown trigger="click" @command="commandHandle" :hide-on-click="true">
+    <x-dropdown trigger="click" @command="commandHandle" :hide-on-click="true">
         <span class="drop-down_link">下拉菜单</span>
-        <v-dropdown-menu>
-            <v-dropdown-list command="a">下拉列表1</v-dropdown-list>
-            <v-dropdown-list command="b">下拉列表2</v-dropdown-list>
-            <v-dropdown-list command="c"><h4>下拉列表3</h4></v-dropdown-list>
-        </v-dropdown-menu>
-    </v-dropdown>
+        <x-dropdown-menu>
+            <x-dropdown-list command="a">下拉列表1</x-dropdown-list>
+            <x-dropdown-list command="b">下拉列表2</x-dropdown-list>
+            <x-dropdown-list command="c"><h4>下拉列表3</h4></x-dropdown-list>
+        </x-dropdown-menu>
+    </x-dropdown>
   </div>
 </template>
 
 <script>
-import VDropdown from 'components/dropdown/dropdown'
-import VDropdownMenu from 'components/dropdown/dropdown-menu'
-import VDropdownList from 'components/dropdown/dropdown-list'
+import XDropdown from 'components/dropdown/dropdown'
+import XDropdownMenu from 'components/dropdown/dropdown-menu'
+import XDropdownList from 'components/dropdown/dropdown-list'
 
 export default {
   name: 'Dropdown',
   components: {
-    VDropdown,
-    VDropdownMenu,
-    VDropdownList
+    XDropdown,
+    XDropdownMenu,
+    XDropdownList
   },
   methods: {
     commandHandle (command, instance) {
