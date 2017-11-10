@@ -3,6 +3,7 @@
     <x-scroller></x-scroller>
     <x-dropdown></x-dropdown>
     <x-swiper></x-swiper>
+    <x-search placeholder="请输入搜索关键字"></x-search>
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import XDropdown from './pages/dropdown'
 import XSwiper from './pages/swiper'
 import XScroller from './pages/scroller'
+import XSearch from 'components/search'
 export default {
   name: 'app',
   components: {
     XDropdown,
     XSwiper,
-    XScroller
+    XScroller,
+    XSearch
   }
 }
 </script>
@@ -29,5 +32,8 @@ export default {
   color: #2c3e50;
   min-height: 100%;
   margin-top: 20px;
+}
+.y-search {
+  margin-top: 10px
 }
 </style>
