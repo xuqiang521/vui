@@ -4,6 +4,7 @@
     <x-dropdown></x-dropdown>
     <x-swiper></x-swiper>
     <x-search placeholder="请输入搜索关键字"></x-search>
+    <!-- <x-message msg="hello"></x-message> -->
   </div>
 </template>
 
@@ -19,6 +20,9 @@ export default {
     XSwiper,
     XScroller,
     XSearch
+  },
+  mounted () {
+    this.$message({msg: 'hello message components ~'})
   }
 }
 </script>
