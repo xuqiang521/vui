@@ -139,6 +139,57 @@ export default {
 </script>
 ```
 
+## search
+```html
+<template>
+  <div>
+    <x-search 
+      placeholder="请输入搜索关键字" 
+      @search="searchFn"
+      @enter="searchEnter"
+      @close="closeFn"
+    ></x-search>
+  </div>
+</template>
+
+<script>
+import XSearch from 'components/search'
+
+export default {
+  components: {
+    XSearch
+  },
+  methods: {
+    searchFn (query) {
+      console.log('search', query)
+    },
+    searchEnter (query) {
+      console.log('enter', query)
+    },
+    closeFn (query) {
+      console.log('close', query)
+    }
+  }
+}
+</script>
+```
+
+## message
+
+```javascript
+/**
+ * props {
+ *   msg: String,  // 消息
+ *   timeout: {
+ *     type: Number,
+ *     default: 2000
+ *   },  // message消失延时时长
+ *   callback: Function,  // 回调
+ *   icon: String,  // 信息开头是否有特殊icon
+ * }
+ */
+this.$message({msg: 'hello message components ~'})
+```
 
 ## Build Setup
 

@@ -3,7 +3,7 @@
     <x-scroller></x-scroller>
     <x-dropdown></x-dropdown>
     <x-swiper></x-swiper>
-    <x-search placeholder="请输入搜索关键字"></x-search>
+    <x-search></x-search>
     <!-- <x-message msg="hello"></x-message> -->
   </div>
 </template>
@@ -12,7 +12,7 @@
 import XDropdown from './pages/dropdown'
 import XSwiper from './pages/swiper'
 import XScroller from './pages/scroller'
-import XSearch from 'components/search'
+import XSearch from './pages/search'
 export default {
   name: 'app',
   components: {
