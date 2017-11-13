@@ -189,6 +189,8 @@ export default {
  * }
  */
 this.$message({msg: 'hello message components ~'})
+// or after register global message component
+// <x-message msg="hello message components ~"></x-message>
 ```
 
 ## Build Setup
