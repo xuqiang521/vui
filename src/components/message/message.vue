@@ -24,11 +24,11 @@ export default {
     };
   },
   mounted () {
-    document.getElementsByTagName('html')[0].style.overflow = 'hidden'
+    // document.getElementsByTagName('html')[0].style.overflow = 'hidden'
     setTimeout(() => {
       // 销毁组件
       this.$el.remove()
-      document.getElementsByTagName('html')[0].style.overflow = 'initial'
+      // document.getElementsByTagName('html')[0].style.overflow = 'initial'
     }, this.timeout)
   }
 };
@@ -59,12 +59,12 @@ export default {
 .x-message {
   min-width: 145px;
   max-width: 275px;
-  width:100%;
+  width: 100%;
   padding: 16px;
   font-size: 14px;
   text-align: center;
   border-radius: 4px;
-  background :rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.8);
   color: #fff;
   animation: zoomIn .15s ease forwards;
 }

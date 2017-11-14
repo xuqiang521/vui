@@ -22,7 +22,22 @@ export default {
     XSearch
   },
   mounted () {
-    this.$message({msg: 'hello message components ~'})
+    // this.$message({msg: 'hello message components ~'})
+    this.$modal({
+      title: 'Demo Modal',
+      cancelText: '取消',
+      okText: '确定',
+      content: '测试，测试，测试，测试，测试，测试，测试，测试，测试',
+      data: {
+        hello: '',
+      },
+      onOk() {
+        console.log('click ok btn to do someting');
+      },
+      onCancel() {
+        console.log('click cancel btn to do someting');
+      }
+    })
   }
 }
 </script>
