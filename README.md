@@ -1,3 +1,14 @@
+# Existing components
+
+- [x] dropdown
+- [x] swiper
+- [x] scroller
+- [x] search
+- [x] message
+- [x] modal
+
+# Usage of components
+
 ## dropdown
 
 ```html
@@ -140,6 +151,7 @@ export default {
 ```
 
 ## search
+
 ```html
 <template>
   <div>
@@ -188,9 +200,68 @@ export default {
  *   icon: String,  // 信息开头是否有特殊icon
  * }
  */
-this.$message({msg: 'hello message components ~'})
+this.$dialog.msg({msg: 'hello message components ~'})
 // or after register global message component
 // <x-message msg="hello message components ~"></x-message>
+```
+
+## modal
+
+```javascript
+/**
+ *
+ * show: Boolean,
+ * title: String,
+ * onOk: Function,
+ * content: String,
+ * onCancel: Function,
+ * cancelText: String,
+ * okText: String,
+ * showCloseIcon: {
+ *   type: Boolean,
+ *   default: true
+ * }
+ */
+this.$dialog.modal({
+  title: 'Demo Modal',
+  cancelText: '取消',
+  okText: '确定',
+  content: '测试，测试，测试，测试，测试，测试，测试，测试，测试',
+  onOk () {
+    console.log('click ok btn to do someting');
+  },
+  onCancel () {
+    console.log('click cancel btn to do someting');
+  }
+})
+```
+
+`or after register global message component`
+
+```html
+<template>
+  <x-modal 
+    title="Demo Modal" 
+    cancelText="取消" 
+    okText="确定" 
+    content="测试，测试，测试，测试，测试，测试，测试，测试，测试"
+    :onOK="okFn"
+    :onCancel="cancelFn"
+  ></x-modal>
+</template>
+
+<script>
+export default {
+  methods: {
+    okFn () {
+      console.log('click ok btn to do someting');
+    },
+    cancelFn () {
+      console.log('click cancel btn to do someting');
+    }
+  }
+}
+</script>
 ```
 
 ## Build Setup
