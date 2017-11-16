@@ -17,6 +17,11 @@ import { Msg, Modal } from 'components/dialog'
  * Vue.component(ModalComponent.name, ModalComponent)
  *
  */
+import Table from 'components/table/table'
+import TableColumn from 'components/table/table-column'
+
+Vue.component(Table.name, Table)
+Vue.component(TableColumn.name, TableColumn)
 
 Vue.prototype.$dialog = {
   msg: Msg,

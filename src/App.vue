@@ -1,9 +1,15 @@
 <template>
   <div id="app">
+    <h4>scroller</h4>
     <x-scroller></x-scroller>
+    <h4>dropdown</h4>
     <x-dropdown></x-dropdown>
+    <h4>swiper</h4>
     <x-swiper></x-swiper>
+    <h4>search</h4>
     <x-search></x-search>
+    <h4>table</h4>
+    <x-table></x-table>
     <!-- <x-message msg="hello"></x-message> -->
   </div>
 </template>
@@ -13,13 +19,15 @@ import XDropdown from './pages/dropdown'
 import XSwiper from './pages/swiper'
 import XScroller from './pages/scroller'
 import XSearch from './pages/search'
+import XTable from './pages/table'
 export default {
   name: 'app',
   components: {
     XDropdown,
     XSwiper,
     XScroller,
-    XSearch
+    XSearch,
+    XTable
   },
   mounted () {
     // this.$dialog.msg({msg: 'hello message components ~'})

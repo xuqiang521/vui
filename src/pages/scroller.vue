@@ -1,6 +1,6 @@
 <style scoped>
 .scroller-test {
-  height: 330px
+  height: 330px;
 }
 ul {
   padding: 20px 0
