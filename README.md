@@ -27,17 +27,8 @@
 </template>
 
 <script>
-import XDropdown from 'components/dropdown/dropdown'
-import XDropdownMenu from 'components/dropdown/dropdown-menu'
-import XDropdownList from 'components/dropdown/dropdown-list'
-
 export default {
   name: 'Dropdown',
-  components: {
-    XDropdown,
-    XDropdownMenu,
-    XDropdownList
-  },
   methods: {
     commandHandle (command, instance) {
       console.log(command, instance);
@@ -60,8 +51,6 @@ export default {
 </template>
 
 <script>
-import XSwiper from 'components/swiper'
-
 export default {
   data () {
     return {
@@ -70,9 +59,6 @@ export default {
         'https://pic.ziroom.com/house_images/g2/M00/53/27/v180x135_ChAFD1mQVAqANGJ4ACVWgRBv5E8984.JPG'
       ],
     }
-  },
-  components: {
-    XSwiper
   }
 }
 </script>
@@ -124,12 +110,7 @@ li {
 </template>
 
 <script>
-import XScroller from 'components/scroller'
-
 export default {
-  components: {
-    XScroller
-  },
   data () {
     return {
       noDataText: '没有更多数据啦~'
@@ -166,12 +147,7 @@ export default {
 </template>
 
 <script>
-import XSearch from 'components/search'
-
 export default {
-  components: {
-    XSearch
-  },
   methods: {
     searchFn (query) {
       console.log('search', query)

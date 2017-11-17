@@ -82,8 +82,8 @@
 </template>
 <script>
 export default {
-  name: 'ySearch',
-  componentName: 'ySearch',
+  name: 'x-search',
+  componentName: 'x-search',
   props: {
     // 搜索节流时长
     searchDelay: {

@@ -12,17 +12,8 @@
 </template>
 
 <script>
-import XDropdown from 'components/dropdown/dropdown'
-import XDropdownMenu from 'components/dropdown/dropdown-menu'
-import XDropdownList from 'components/dropdown/dropdown-list'
-
 export default {
   name: 'Dropdown',
-  components: {
-    XDropdown,
-    XDropdownMenu,
-    XDropdownList
-  },
   methods: {
     commandHandle (command, instance) {
       console.log(command, instance);

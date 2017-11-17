@@ -10,12 +10,7 @@
 </template>
 
 <script>
-import XSearch from 'components/search'
-
 export default {
-  components: {
-    XSearch
-  },
   methods: {
     searchFn (query) {
       console.log('search', query)

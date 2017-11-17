@@ -34,12 +34,7 @@ li {
 </template>
 
 <script>
-import XScroller from 'components/scroller'
-
 export default {
-  components: {
-    XScroller
-  },
   data () {
     return {
       noDataText: '没有更多数据啦~'

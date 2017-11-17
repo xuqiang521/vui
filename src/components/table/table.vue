@@ -51,7 +51,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$children);
     this.$children.forEach(child => {
       let name = child.$options.componentName
       if (name === 'XTableColumn') {

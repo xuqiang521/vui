@@ -164,7 +164,7 @@ const widthAndHeightValidator = (v) => {
 }
 
 export default {
-  name: 'scroller',
+  name: 'x-scroller',
   components: {
     Spinner,
     Arrow

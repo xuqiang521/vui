@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import XSwipe from './swiper'
-import XSwipeItem from './swiperItem'
+// import XSwipe from './swiper'
+// import XSwipeItem from './swiperItem'
 
 export default {
   name: 'x-swiper',
@@ -102,10 +102,10 @@ export default {
       this.currentThumIndex = newIndex
     }
   },
-  components: {
-    XSwipe,
-    XSwipeItem
-  }
+  // components: {
+  //   XSwipe,
+  //   XSwipeItem
+  // }
 }
 </script>
 
