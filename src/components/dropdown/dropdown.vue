@@ -20,8 +20,8 @@
 
 <script>
 // vue指令，点击节点以外地方，并触发回调
-import Clickoutside from '../../utils/clickoutside.js';
-import Emitter from '../../mixins/emitter.js';
+import Clickoutside from '@/utils/clickoutside.js';
+import Emitter from '@/mixins/emitter.js';
 export default {
     name: 'XDropdown',
     componentName: 'XDropdown',

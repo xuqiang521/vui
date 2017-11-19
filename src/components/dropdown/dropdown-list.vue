@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Emitter from '../../mixins/emitter.js';
+import Emitter from '@/mixins/emitter.js';
 export default {
     name: 'XDropdownList',
     mixins: [Emitter],
