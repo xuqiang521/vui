@@ -31,18 +31,18 @@ export default {
   },
   mounted () {
     // this.$dialog.msg({msg: 'hello message components ~'})
-    this.$dialog.modal({
-      title: 'Demo Modal',
-      cancelText: '取消',
-      okText: '确定',
-      content: '测试，测试，测试，测试，测试，测试，测试，测试，测试',
-      onOk() {
-        console.log('click ok btn to do someting');
-      },
-      onCancel() {
-        console.log('click cancel btn to do someting');
-      }
-    })
+    // this.$dialog.modal({
+    //   title: 'Demo Modal',
+    //   cancelText: '取消',
+    //   okText: '确定',
+    //   content: '测试，测试，测试，测试，测试，测试，测试，测试，测试',
+    //   onOk() {
+    //     console.log('click ok btn to do someting');
+    //   },
+    //   onCancel() {
+    //     console.log('click cancel btn to do someting');
+    //   }
+    // })
   }
 }
 </script>

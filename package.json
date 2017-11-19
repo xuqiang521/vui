@@ -1,16 +1,30 @@
 {
   "name": "my-vue-component",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "v_qiangdaxu <v_qiangdaxu@tencent.com>",
+  "version": "1.0.1",
+  "description": "A Private Component Library for Vue.js.",
+  "author": "qiangdada <xu.qiang@yujianjia.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuqiang521/muy-element-ui.git"
+  },
+  "keywords": [
+    "element",
+    "vue",
+    "components"
+  ],
+  "author": "qiangdada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuqiang521/muy-element-ui/issues"
+  },
   "dependencies": {
-    "vue": "^2.0.1"
+    "vue": "^2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
