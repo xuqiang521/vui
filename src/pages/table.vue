@@ -1,10 +1,17 @@
+<style lang="stylus">
+.table {
+  padding: 30px 15px;
+}
+</style>
 <template>
-  <x-table :tableData="items">
-    <x-table-column prop="date" label="日期"></x-table-column>
-    <x-table-column prop="own" label="本客房(度)"></x-table-column>
-    <x-table-column prop="common" label="公共分摊(度)"></x-table-column>
-    <x-table-column prop="total" label="合计(度)"></x-table-column>
-  </x-table>
+  <div class="table">
+    <x-table :tableData="items">
+      <x-table-column prop="date" label="日期"></x-table-column>
+      <x-table-column prop="own" label="本客房(度)"></x-table-column>
+      <x-table-column prop="common" label="公共分摊(度)"></x-table-column>
+      <x-table-column prop="total" label="合计(度)"></x-table-column>
+    </x-table> 
+  </div>
 </template>
 
 <script>

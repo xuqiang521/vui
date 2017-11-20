@@ -20,5 +20,9 @@ export default {
 <style lang="stylus" scoped>
 .swiper-page {
   height auto
+  text-align: center;
+  p {
+    margin: 10px 0;
+  }
 }
 </style>

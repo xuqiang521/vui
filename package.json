@@ -2,7 +2,7 @@
   "name": "my-vue-component",
   "version": "1.0.1",
   "description": "A Private Component Library for Vue.js.",
-  "author": "qiangdada <xu.qiang@yujianjia.com>",
+  "author": "qiangdada",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -18,13 +18,13 @@
     "vue",
     "components"
   ],
-  "author": "qiangdada",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/xuqiang521/muy-element-ui/issues"
   },
   "dependencies": {
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

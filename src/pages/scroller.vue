@@ -1,6 +1,6 @@
 <style scoped>
-.scroller-test {
-  height: 330px;
+.scroller-page {
+  height: 100%;
 }
 ul {
   padding: 20px 0
@@ -15,7 +15,7 @@ li {
 </style>
 
 <template>
-  <div class="scroller-test">
+  <div class="scroller-page">
     <x-scroller
       :on-refresh="refresh"
       :on-infinite="infinite"
@@ -28,6 +28,12 @@ li {
         <li>数据4</li>
         <li>数据5</li>
         <li>数据6</li>
+        <li>数据7</li>
+        <li>数据8</li>
+        <li>数据9</li>
+        <li>数据10</li>
+        <li>数据11</li>
+        <li>数据12</li>
       </ul>
     </x-scroller>
   </div>

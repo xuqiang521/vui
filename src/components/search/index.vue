@@ -25,7 +25,7 @@
   input::-webkit-search-cancel-button {
     display: none;
   }
-  .y-search{
+  .x-search{
     width: 100%;
     height: 42px;
     display: inline-block;
@@ -60,10 +60,10 @@
   }
 </style>
 <template>
-  <div class="y-search" :style="styles" :clear="clear">
+  <div class="x-search" :style="styles" :clear="clear">
     <form action="#" onsubmit="return false;">
       <input type="search"
-        class="y-search-input"
+        class="x-search-input"
         v-model='model'
         :placeholder="placeholder"
         @keyup="searchKeyupFn"
@@ -138,7 +138,7 @@ export default {
     },
     searchEnterFn (e) {
       this.$emit('enter', this.model)
-      document.getElementsByClassName('y-search-input')[0].blur()
+      document.getElementsByClassName('x-search-input')[0].blur()
       if (this.clear) {
         this.model = '';
       }

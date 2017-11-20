@@ -1,36 +1,33 @@
 <template>
   <div id="app">
-    <h4>scroller</h4>
-    <x-scroller></x-scroller>
-    <h4>dropdown</h4>
-    <x-dropdown></x-dropdown>
-    <h4>swiper</h4>
-    <x-swiper></x-swiper>
-    <h4>search</h4>
-    <x-search></x-search>
-    <h4>table</h4>
-    <x-table></x-table>
-    <!-- <x-message msg="hello"></x-message> -->
+    <transition :name="transitionName">
+      <router-view class="child-view"></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import XDropdown from './pages/dropdown'
-import XSwiper from './pages/swiper'
-import XScroller from './pages/scroller'
-import XSearch from './pages/search'
-import XTable from './pages/table'
 export default {
   name: 'app',
-  components: {
-    XDropdown,
-    XSwiper,
-    XScroller,
-    XSearch,
-    XTable
+  data() {
+    return {
+      transitionName: 'slide-left',
+    };
+  },
+  beforeRouteUpdate(to, from, next) {
+  // 如果isBack为true时，证明是用户点击了回退，执行slide-right动画
+    const isBack = this.$router.isBack;
+    if (isBack) {
+      this.transitionName = 'slide-right';
+    } else {
+      this.transitionName = 'slide-left';
+    }
+  // 做完回退动画后，要设置成前进动画，否则下次打开页面动画将还是回退
+    this.$router.isBack = false;
+    next();
   },
   mounted () {
-    // this.$dialog.msg({msg: 'hello message components ~'})
+    this.$dialog.msg({msg: 'hello message components ~'})
     // this.$dialog.modal({
     //   title: 'Demo Modal',
     //   cancelText: '取消',
@@ -44,20 +41,34 @@ export default {
     //   }
     // })
   }
-}
+};
 </script>
 
 <style>
+@import 'stylus/_reset.styl';
 #app {
+  min-height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  min-height: 100%;
-  margin-top: 20px;
+  text-align: left;
+  color: #333;
 }
-.y-search {
-  margin-top: 10px
+.child-view {
+  position: absolute;
+  width:100%;
+  transition: all .8s cubic-bezier(.55,0,.1,1);
 }
+.slide-left-enter, .slide-right-leave-active {
+ opacity: 0;
+ -webkit-transform: translate(50px, 0);
+ transform: translate(50px, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+ opacity: 0;
+ -webkit-transform: translate(-50px, 0);
+ transform: translate(-50px, 0);
+}
+
 </style>
+

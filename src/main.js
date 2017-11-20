@@ -1,5 +1,8 @@
 import Vue from 'vue'
+
 import App from './App'
+import router from './router';
+
 import { Msg, Modal } from 'components/dialog'
 // import Modal from 'components/modal';
 
@@ -43,6 +46,7 @@ Vue.prototype.$dialog = {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   template: '<App/>',
   components: { App }
 })

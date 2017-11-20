@@ -1,5 +1,11 @@
+<style lang="stylus">
+.dropdown-page {
+  text-align: center;
+  margin-top: 30px;
+}
+</style>
 <template>
-  <div class="test">
+  <div class="dropdown-page">
     <x-dropdown trigger="click" @command="commandHandle" :hide-on-click="true">
         <span class="drop-down_link">下拉菜单</span>
         <x-dropdown-menu>
