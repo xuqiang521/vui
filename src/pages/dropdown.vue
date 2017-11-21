@@ -5,7 +5,7 @@
 }
 </style>
 <template>
-  <div class="dropdown-page">
+  <div class="dropdown-page" v-title data-title="dropdown">
     <x-dropdown trigger="click" @command="commandHandle" :hide-on-click="true">
         <span class="drop-down_link">下拉菜单</span>
         <x-dropdown-menu>

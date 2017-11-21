@@ -7,33 +7,22 @@ ul {
 }
 li {
   width: 100%;
-  height: 35px;
-  line-height: 35px;
+  height: 40px;
+  line-height: 40px;
   border-bottom: 1px solid #eee; 
   text-align: center;
 }
 </style>
 
 <template>
-  <div class="scroller-page">
+  <div class="scroller-page" v-title data-title="scroller">
     <x-scroller
       :on-refresh="refresh"
       :on-infinite="infinite"
       :noDataText="noDataText"
     >
       <ul>
-        <li>数据1</li>
-        <li>数据2</li>
-        <li>数据3</li>
-        <li>数据4</li>
-        <li>数据5</li>
-        <li>数据6</li>
-        <li>数据7</li>
-        <li>数据8</li>
-        <li>数据9</li>
-        <li>数据10</li>
-        <li>数据11</li>
-        <li>数据12</li>
+        <li v-for="(list, index) in lists" :key="index">{{list}}</li>
       </ul>
     </x-scroller>
   </div>
@@ -43,18 +32,37 @@ li {
 export default {
   data () {
     return {
-      noDataText: '没有更多数据啦~'
+      noDataText: '没有更多数据啦~',
+      len: 6,
+    }
+  },
+  computed: {
+    lists () {
+      let arr = []
+      for (let i = 1; i < this.len + 1; i++) {
+        arr.push('列表' + i)
+      }
+      return arr
     }
   },
   methods: {
     refresh (done) {
-      setTimeout(done, 1000)
+      setTimeout(() => {
+        this.len = 6
+      }, 1000)
       this.noDataText = ''
       console.log('refresh');
     },
     infinite (done) {
-      setTimeout(done, 1000, true)
-      this.noDataText = '没有更多数据啦~'
+      setTimeout(() => {
+        if (this.len >= 10) {
+          done(true)
+          return
+        }
+        this.len++
+        this.noDataText = '没有更多数据啦~'
+        done()
+      }, 1000)
       console.log('infinite');
     }
   }

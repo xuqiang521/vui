@@ -1,5 +1,11 @@
+<style lang="stylus">
+.search-page {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+</style>
 <template>
-  <div>
+  <div class="search-page" v-title data-title="search">
     <x-search 
       placeholder="请输入搜索关键字" 
       @search="searchFn"

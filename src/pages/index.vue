@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" v-title data-title="Element">
     <h3>项目快速入口</h3>
     <ul class='menu'>
       <li><router-link to="dropdown">✅ dropdown</router-link></li>

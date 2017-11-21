@@ -43,6 +43,13 @@ Vue.prototype.$dialog = {
   modal: Modal
 }
 
+// 动态设置页面title 设置全局指令
+Vue.directive('title', {
+  inserted(el, binding) {
+    document.title = el.dataset.title;
+  },
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
