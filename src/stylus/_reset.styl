@@ -116,3 +116,19 @@ textarea {
   font: 100% tahoma, "\5b8b\4f53", arial;
 }
 
+
+textarea::-webkit-input-placeholder, input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #CCC;
+}
+textarea:-moz-placeholder ,input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #CCC;
+   opacity:  1;
+}
+textarea::-moz-placeholder, input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #CCC;
+   opacity:  1;
+}
+textarea:-ms-input-placeholder, input:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: #CCC;
+}
+

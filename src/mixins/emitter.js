@@ -1,5 +1,5 @@
 /**
- * [broadcast 上下传递]
+ * [broadcast 向下传递]
  * @param  {[type]} componentName [组件别名]
  * @param  {[type]} eventName     [事件别名]
  * @param  {[type]} params        [事件回调参数]

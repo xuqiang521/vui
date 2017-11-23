@@ -15,19 +15,19 @@ export default {
     };
   },
   beforeRouteUpdate(to, from, next) {
-  // 如果isBack为true时，证明是用户点击了回退，执行slide-right动画
+    // 如果isBack为true时，证明是用户点击了回退，执行slide-right动画
     const isBack = this.$router.isBack;
     if (isBack) {
       this.transitionName = 'slide-right';
     } else {
       this.transitionName = 'slide-left';
     }
-  // 做完回退动画后，要设置成前进动画，否则下次打开页面动画将还是回退
+    // 做完回退动画后，要设置成前进动画，否则下次打开页面动画将还是回退
     this.$router.isBack = false;
     next();
   },
   mounted () {
-    this.$dialog.msg({msg: 'hello message components ~'})
+    // this.$dialog.msg({msg: 'hello message components ~'})
     // this.$dialog.modal({
     //   title: 'Demo Modal',
     //   cancelText: '取消',
@@ -46,6 +46,7 @@ export default {
 
 <style>
 @import 'stylus/_reset.styl';
+@import 'stylus/_common.styl';
 #app {
   min-height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -56,7 +57,7 @@ export default {
 }
 .child-view {
   position: absolute;
-  width:100%;
+  width: 100%;
   transition: all .8s cubic-bezier(.55,0,.1,1);
 }
 .slide-left-enter, .slide-right-leave-active {

@@ -10,6 +10,7 @@ exports.Swiper = require('./swiper')
 exports.Scroller = require('./scroller')
 // search
 exports.Search = require('./search')
+exports.SearchList = require('./search/search-list')
 // table
 exports.Table = require('./table/table')
 exports.TableColumn = require('./table/table-column')

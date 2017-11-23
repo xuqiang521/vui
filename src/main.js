@@ -30,6 +30,7 @@ const components = [
   require('./components').Swiper,
   require('./components').Scroller,
   require('./components').Search,
+  require('./components').SearchList,
   require('./components').Table,
   require('./components').TableColumn
 ]

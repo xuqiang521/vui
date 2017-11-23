@@ -1,37 +1,15 @@
 
 <style lang="stylus" scoped>
-  textarea::-webkit-input-placeholder, input::-webkit-input-placeholder { /* WebKit browsers */
-      color: #CCC;
-  }
-  textarea:-moz-placeholder ,input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-     color: #CCC;
-     opacity:  1;
-  }
-  textarea::-moz-placeholder, input::-moz-placeholder { /* Mozilla Firefox 19+ */
-     color: #CCC;
-     opacity:  1;
-  }
-  textarea:-ms-input-placeholder, input:-ms-input-placeholder { /* Internet Explorer 10+ */
-     color: #CCC;
-  }
-  input[type=search], input[type=tel], input[type=text], input {
-    -webkit-appearance: none;  /*去除系统默认的样式*/
-    -webkit-box-sizing: content-box;
-    font-family: inherit;
-    font-size: 100%;
-    box-sizing: border-box;
-  }
-  input::-webkit-search-decoration,
-  input::-webkit-search-cancel-button {
-    display: none;
-  }
   .x-search{
     width: 100%;
-    height: 42px;
+    height: 30px;
     display: inline-block;
     text-align: center;
     position: relative;
     box-sizing: border-box;
+    form {
+      position: relative;
+    }
     input {
       width: 100%;
       height: 30px;
@@ -50,12 +28,14 @@
     .search-icon {
       position absolute
       left: 15px;
-      top: 6px;
+      top: 50%;
+      transform: translateY(-50%)
     }
     .close-icon{
       position :absolute;
       right: 15px;
-      top: 6px;
+      top: 50%;
+      transform: translateY(-50%)
     }
   }
 </style>
@@ -63,6 +43,7 @@
   <div class="x-search" :style="styles" :clear="clear">
     <form action="#" onsubmit="return false;">
       <input type="search"
+        ref="input"
         class="x-search-input"
         v-model='model'
         :placeholder="placeholder"
@@ -78,6 +59,7 @@
         <img src="../../assets/close.png" alt="">
       </div>
     </form>
+    <slot></slot>
   </div>
 </template>
 <script>
@@ -86,16 +68,24 @@ export default {
   componentName: 'x-search',
   props: {
     // 搜索节流时长
-    searchDelay: {
+    timeout: {
       type: Number,
       default: 100
     },
+    async: {
+      type: Boolean,
+      default: true
+    },
     styles: Object,
-    placeholder: String,
+    placeholder: {
+      type: String,
+      default: '搜索'
+    },
     clear: {
       type: Boolean,
       default: false
-    }
+    },
+    autofocus: Boolean, // iOS移动端autofocus无效
   },
   data() {
     return {
@@ -116,7 +106,7 @@ export default {
       if (this.searchFlag) {
         this.$emit('search', this.model)
       }
-    },
+    }
   },
   created () {
     this.$on('clear', () => {
@@ -124,29 +114,31 @@ export default {
     });
   },
   methods: {
-    disabled () {
-      return false
-    },
     searchKeyupFn() {
       let self = this;
       this.searchFlag = false;
 
+      if (!this.async) {
+        this.searchFlag = true;
+        return
+      }
+
       clearTimeout(this.timer)
       this.timer = setTimeout(function() {
         self.searchFlag = true
-      }, this.searchDelay)
+      }, this.timeout)
     },
     searchEnterFn (e) {
       this.$emit('enter', this.model)
-      document.getElementsByClassName('x-search-input')[0].blur()
+      this.$refs.input.blur()
       if (this.clear) {
         this.model = '';
       }
     },
     searchBlurFn () {
-
+      // do something for blur
     },
-    closeFn() {
+    closeFn () {
       this.model = '';
       this.showClose = false;
       this.$emit('close', this.model)
@@ -154,6 +146,9 @@ export default {
     searchFocusFn () {
       this.$emit('focus')
     }
+  },
+  mounted () {
+    this.autofocus && this.$refs.input.focus();
   }
 };
 </script>
