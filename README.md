@@ -529,6 +529,3 @@ export default {
 </script>
 ```
 
-## vue部分源码分析
-
-[vue-part.js](https://github.com/xuqiang521/my-element-ui/blob/master/vue-part.js)
