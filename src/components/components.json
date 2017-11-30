@@ -1,0 +1,14 @@
+{
+  "Dropdown": "./dropdown/Dropdown",
+  "DropdownMenu": "./dropdown/DropdownMenu",
+  "DropdownList": "./dropdown/DropdownList",
+  "Swipe": "./swiper/Swiper",
+  "SwipeItem": "./swiper/SwiperItem",
+  "Swiper": "./swiper/index",
+  "Scroller": "./scroller/index",
+  "Search": "./search/index",
+  "SearchList": "./search/SearchList",
+  "Table": "./table/Table",
+  "TableColumn": "./table/TableColumn",
+  "Test": "./test/Test"
+}

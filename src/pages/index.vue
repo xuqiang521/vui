@@ -7,6 +7,7 @@
       <li><router-link to="scroller">✅ scroller</router-link></li>
       <li><router-link to="search">✅ search</router-link></li>
       <li><router-link to="table">✅ table</router-link></li>
+      <li><router-link to="test">✅ test</router-link></li>
     </ul>
   </div>
 </template>

@@ -384,8 +384,6 @@ export default {
       }
       // enable infinite loading
       if (this.onInfinite) {
-        // let {left, top, zoom} = this.scroller.getValues()
-        // console.log(top);
         // 在 keep alive 中 deactivated 的组件长宽变为 0
         if (this.content.offsetHeight > 0 &&
           top - 20 > 0 && top - 20 > this.content.offsetHeight - this.container.clientHeight) {

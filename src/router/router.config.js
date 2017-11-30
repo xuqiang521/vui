@@ -6,6 +6,7 @@ const scroller = r => require.ensure([], () => r(require('pages/scroller')), 'sc
 const search   = r => require.ensure([], () => r(require('pages/search')), 'search')
 const swiper   = r => require.ensure([], () => r(require('pages/swiper')), 'swiper')
 const table    = r => require.ensure([], () => r(require('pages/table')), 'table')
+const test     = r => require.ensure([], () => r(require('pages/test')), 'test')
 
 let routers = [];
 routers = [
@@ -47,6 +48,11 @@ routers = [
         path: 'table',
         name: 'table',
         component: table,
+      },
+      {
+        path: 'test',
+        name: 'test',
+        component: test,
       }
     ]
   }

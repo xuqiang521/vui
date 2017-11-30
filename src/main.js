@@ -21,19 +21,20 @@ import { Msg, Modal } from 'components/dialog'
  *
  */
 
-const components = [
-  require('./components').Dropdown,
-  require('./components').DropdownMenu,
-  require('./components').DropdownList,
-  require('./components').Swipe,
-  require('./components').SwipeItem,
-  require('./components').Swiper,
-  require('./components').Scroller,
-  require('./components').Search,
-  require('./components').SearchList,
-  require('./components').Table,
-  require('./components').TableColumn
-]
+// const components = [
+//   require('./components').Dropdown,
+//   require('./components').DropdownMenu,
+//   require('./components').DropdownList,
+//   require('./components').Swipe,
+//   require('./components').SwipeItem,
+//   require('./components').Swiper,
+//   require('./components').Scroller,
+//   require('./components').Search,
+//   require('./components').SearchList,
+//   require('./components').Table,
+//   require('./components').TableColumn
+// ]
+import components from 'components'
 
 components.map(component => {
   Vue.component(component.name, component)
