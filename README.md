@@ -20,13 +20,13 @@ npm run build --report
 
 # Existing components
 
-- [x] dropdown
-- [x] swiper
-- [x] scroller
-- [x] search
-- [x] message
-- [x] modal
-- [x] table
+- [x] [dropdown](https://github.com/xuqiang521/vui/tree/master/src/components/dropdown)
+- [x] [swiper](https://github.com/xuqiang521/vui/tree/master/src/components/swiper)
+- [x] [scroller](https://github.com/xuqiang521/vui/tree/master/src/components/scroller)
+- [x] [search](https://github.com/xuqiang521/vui/tree/master/src/components/search)
+- [x] [message](https://github.com/xuqiang521/vui/tree/master/src/components/dialog/message)
+- [x] [modal](https://github.com/xuqiang521/vui/tree/master/src/components/dialog/modal)
+- [x] [table](https://github.com/xuqiang521/vui/tree/master/src/components/table)
 
 # Usage of components
 
@@ -75,7 +75,7 @@ export default {
   data () {
     return {
       items: [
-        'http://p.yujiangongyu.com/758aaf73-a35b-4e89-839e-b715ba6bee9d.jpg', 
+        'http://p.yujiangongyu.com/758aaf73-a35b-4e89-839e-b715ba6bee9d.jpg',
         'https://pic.ziroom.com/house_images/g2/M00/53/27/v180x135_ChAFD1mQVAqANGJ4ACVWgRBv5E8984.JPG'
       ],
     }
@@ -104,7 +104,7 @@ li {
   width: 100%;
   height: 35px;
   line-height: 35px;
-  border-bottom: 1px solid #eee; 
+  border-bottom: 1px solid #eee;
   text-align: center;
 }
 </style>
@@ -165,8 +165,8 @@ export default {
 </style>
 <template>
   <div>
-    <x-search 
-      placeholder="请输入搜索关键字" 
+    <x-search
+      placeholder="请输入搜索关键字"
       @search="searchFn"
       @enter="searchEnter"
       @close="closeFn"
@@ -202,7 +202,7 @@ export default {
 </style>
 <template>
   <div class="search-page" v-title data-title="search">
-    <x-search 
+    <x-search
       placeholder="请输入搜索关键字"
       :autofocus="true"
       :async="false"
@@ -283,7 +283,7 @@ export default {
 .search-page {
   padding: 0 10px;
   margin-top: 10px;
-  
+
   .search-result {
     position: relative;
     overflow: hidden;
@@ -309,7 +309,7 @@ export default {
 </style>
 <template>
   <div class="search-page" v-title data-title="search">
-    <x-search 
+    <x-search
       placeholder="请输入搜索关键字"
       :autofocus="true"
       :async="false"
@@ -463,10 +463,10 @@ this.$dialog.modal({
 
 ```html
 <template>
-  <x-modal 
-    title="Demo Modal" 
-    cancelText="取消" 
-    okText="确定" 
+  <x-modal
+    title="Demo Modal"
+    cancelText="取消"
+    okText="确定"
     content="测试，测试，测试，测试，测试，测试，测试，测试，测试"
     :onOK="okFn"
     :onCancel="cancelFn"
