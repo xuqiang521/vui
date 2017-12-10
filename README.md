@@ -27,6 +27,7 @@ npm run build --report
 - [x] [message](https://github.com/xuqiang521/vui/tree/master/src/components/dialog/message)
 - [x] [modal](https://github.com/xuqiang521/vui/tree/master/src/components/dialog/modal)
 - [x] [table](https://github.com/xuqiang521/vui/tree/master/src/components/table)
+- [x] [picker](https://github.com/xuqiang521/vui/tree/master/src/components/picker)
 
 # Usage of components
 
@@ -539,13 +540,13 @@ export default {
   * type = 'custom' 普通选择器
   **/
 props: {
-  // 时间选择粒度，仅限有时间的选择器，默认为1分钟的粒度
+  // 时间选择粒度，仅限有时间的选择器，默认为1分钟的粒度
   timeStep: Number,
   // 选择器弹窗标题
   title: String,
-  // 起始年份 默认为今年
+  // 起始年份 默认为今年
   startYear: [Number, String],
-  // 结束年份 默认起始开始算10年的范围
+  // 结束年份 默认起始开始算10年的范围
   endYear: [Number, String],
   // 起始日期  类似 '2017-12-10'
   startDate: String,
@@ -615,34 +616,34 @@ props: {
 </style>
 
 <template>
-	<div class="picker-page" v-title data-title="picker">
-		<ul class='x-list'>
-      <li>
-        <label>日期选择</label>
-        <div class="x-list-arrow">
-          <x-picker title="选择日期" startYear="2016" startDate="2015-01-01" endDate="2019-12-01"  placeholder="请选择日期" v-model="now_date" type="date"></x-picker>
-        </div>
-      </li>
-      <li>
-        <label>时间选择</label>
-        <div class="x-list-arrow">
-					<x-picker title="选择时间" placeholder="请选择时间" startMinute="2" endMinute="30" v-model="now_time" type="time"></x-picker>
-        </div>
-      </li>
-      <li>
-        <label>日期时间选择</label>
-        <div class="x-list-arrow">
-					<x-picker title="选择日期时间" placeholder="请选择日期时间" v-model="now_datetime" :timeStep="20" type="datetime"></x-picker>
-        </div>
-      </li>
-      <li>
-        <label>性别选择</label>
-        <div class="x-list-arrow">
-					<x-picker v-model="gender.value" placeholder="请选择性别" :default="gender.default" title="选择性别" type="custom"></x-picker>
-        </div>
-      </li>
-    </ul>
-	</div>
+<div class="picker-page" v-title data-title="picker">
+  <ul class='x-list'>
+    <li>
+      <label>日期选择</label>
+      <div class="x-list-arrow">
+        <x-picker title="选择日期" startYear="2016" startDate="2015-01-01" endDate="2019-12-01"  placeholder="请选择日期" v-model="now_date" type="date"></x-picker>
+      </div>
+    </li>
+    <li>
+      <label>时间选择</label>
+      <div class="x-list-arrow">
+        <x-picker title="选择时间" placeholder="请选择时间" startMinute="2" endMinute="30" v-model="now_time" type="time"></x-picker>
+      </div>
+    </li>
+    <li>
+      <label>日期时间选择</label>
+      <div class="x-list-arrow">
+        <x-picker title="选择日期时间" placeholder="请选择日期时间" v-model="now_datetime" :timeStep="20" type="datetime"></x-picker>
+      </div>
+    </li>
+    <li>
+      <label>性别选择</label>
+      <div class="x-list-arrow">
+        <x-picker v-model="gender.value" placeholder="请选择性别" :default="gender.default" title="选择性别" type="custom"></x-picker>
+      </div>
+    </li>
+  </ul>
+</div>
 </template>
 
 <script>
