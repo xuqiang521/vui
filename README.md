@@ -28,6 +28,7 @@ npm run build --report
 - [x] [modal](https://github.com/xuqiang521/vui/tree/master/src/components/dialog/modal)
 - [x] [table](https://github.com/xuqiang521/vui/tree/master/src/components/table)
 - [x] [picker](https://github.com/xuqiang521/vui/tree/master/src/components/picker)
+- [x] [select](https://github.com/xuqiang521/vui/tree/master/src/components/select)
 
 # Usage of components
 
@@ -674,6 +675,84 @@ export default {
   }
 };
 </script>
-
 ```
 
+## select
+
+```javascript
+props: {
+  // 数据
+  selectData: Array,
+  // 默认显示的标题
+  title: String,
+  // 是否一直显示默认标题
+  alwaysShowTitle: Boolean,
+  // 默认选中的值
+  defaultValue: [Number, String],
+  // select组件的宽度，默认继承父元素100%的width
+  width: {
+    type: String,
+    default: '100%'
+  },
+  // select文字超过多出省略号的宽度
+  ellipsisWidth: {
+    type: String,
+    default: '120px'
+  }
+},
+```
+
+```html
+<template>
+  <div class="select-page" v-title data-title="select">
+    <x-select
+      @search="searchFn"
+      :selectData="selectData"
+      title="LIST ONE"
+      :alwaysShowTitle="false"
+      width="50%"
+      defaultValue="0"
+    ></x-select>
+    <x-select
+      @search="searchFn1"
+      :selectData="selectData1"
+      title="LIST TWO"
+      width="50%"
+      ellipsisWidth="65px"
+      defaultValue="1"
+    ></x-select>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      selectData: [
+        { id: 1, name: "LIST ONE 1" },
+        { id: 2, name: "LIST ONE 2" },
+        { id: 3, name: "LIST ONE 3" },
+        { id: 4, name: "LIST ONE 4" },
+        { id: 5, name: "LIST ONE 5" }
+      ],
+      selectData1: [
+        { id: 1, name: "LIST TWO 1" },
+        { id: 2, name: "LIST TWO 2" },
+        { id: 3, name: "LIST TWO 3" },
+        { id: 4, name: "LIST TWO 4" },
+        { id: 5, name: "LIST TWO 5" }
+      ]
+    };
+  },
+  methods: {
+    searchFn(index, id) {
+      console.log(index, id);
+    },
+    searchFn1(index, id) {
+      console.log(index, id);
+    }
+  }
+};
+</script>
+
+```

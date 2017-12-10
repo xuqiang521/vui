@@ -11,5 +11,6 @@
   "Table": "./table/Table",
   "TableColumn": "./table/TableColumn",
   "Test": "./test/Test",
-  "Picker": "./picker/Picker"
+  "Picker": "./picker/Picker",
+  "Select": "./select/Select"
 }

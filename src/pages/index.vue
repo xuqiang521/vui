@@ -2,12 +2,13 @@
   <div class="home" v-title data-title="Element">
     <h3>项目快速入口</h3>
     <ul class='menu'>
-      <li><router-link to="dropdown">✅ dropdown</router-link></li>
+      <li><router-link to="select">✅ select</router-link></li>
       <li><router-link to="swiper">✅ swiper</router-link></li>
       <li><router-link to="scroller">✅ scroller</router-link></li>
       <li><router-link to="search">✅ search</router-link></li>
       <li><router-link to="table">✅ table</router-link></li>
       <li><router-link to="picker">✅ picker</router-link></li>
+      <li><router-link to="dropdown">✅ dropdown</router-link></li>
       <li><router-link to="test">✅ test</router-link></li>
     </ul>
   </div>

@@ -7,6 +7,7 @@ const search   = r => require.ensure([], () => r(require('pages/search')), 'sear
 const swiper   = r => require.ensure([], () => r(require('pages/swiper')), 'swiper')
 const table    = r => require.ensure([], () => r(require('pages/table')), 'table')
 const picker   = r => require.ensure([], () => r(require('pages/picker')), 'picker')
+const select   = r => require.ensure([], () => r(require('pages/select')), 'select')
 const test     = r => require.ensure([], () => r(require('pages/test')), 'test')
 
 let routers = [];
@@ -54,6 +55,11 @@ routers = [
         path: 'picker',
         name: 'picker',
         component: picker,
+      },
+      {
+        path: 'select',
+        name: 'select',
+        component: select,
       },
       {
         path: 'test',
