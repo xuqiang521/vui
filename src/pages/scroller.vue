@@ -49,6 +49,7 @@ export default {
     refresh (done) {
       setTimeout(() => {
         this.len = 6
+        done()
       }, 1000)
       this.noDataText = ''
       console.log('refresh');
