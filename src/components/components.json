@@ -10,5 +10,6 @@
   "SearchList": "./search/SearchList",
   "Table": "./table/Table",
   "TableColumn": "./table/TableColumn",
-  "Test": "./test/Test"
+  "Test": "./test/Test",
+  "Picker": "./picker/Picker"
 }
