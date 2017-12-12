@@ -9,6 +9,7 @@
       <li><router-link to="table">✅ table</router-link></li>
       <li><router-link to="picker">✅ picker</router-link></li>
       <li><router-link to="dropdown">✅ dropdown</router-link></li>
+      <li><router-link to="dialog">✅ dialog</router-link></li>
       <li><router-link to="test">✅ test</router-link></li>
     </ul>
   </div>

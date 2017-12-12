@@ -16,10 +16,10 @@
       class="table-content"
     >
       <x-table :tableData="items">
-        <x-table-column prop="date" label="日期"></x-table-column>
-        <x-table-column prop="own" label="本客房(度)"></x-table-column>
-        <x-table-column prop="common" label="公共分摊(度)"></x-table-column>
-        <x-table-column prop="total" label="合计(度)"></x-table-column>
+        <x-table-column prop="list_1" label="LIST ONE"></x-table-column>
+        <x-table-column prop="list_2" label="LIST TWO"></x-table-column>
+        <x-table-column prop="list_3" label="LIST THREE"></x-table-column>
+        <x-table-column prop="list_4" label="LIST FOUR"></x-table-column>
       </x-table> 
     </x-scroller>
   </div>
@@ -31,22 +31,28 @@ export default {
     return {
       items: [
         {
-          date: '2017.11.01',
-          own: 1.52,
-          common: 0.13,
-          total: 1.65
+          list_1: '2017.12.09',
+          list_2: '路人1',
+          list_3: '爱过',
+          list_4: '有'
         },
         {
-          date: '2017.11.02',
-          own: 1.52,
-          common: 0.13,
-          total: 1.65
+          list_1: '2017.12.10',
+          list_2: '路人2',
+          list_3: '爱过',
+          list_4: '有'
         },
         {
-          date: '2017.11.03',
-          own: 1.52,
-          common: 0.13,
-          total: 1.65
+          list_1: '2017.12.11',
+          list_2: '路人3',
+          list_3: '爱过',
+          list_4: '没有'
+        },
+        {
+          list_1: '2017.12.12',
+          list_2: '路人4',
+          list_3: '爱过',
+          list_4: '没有'
         }
       ],
       noDataText: '没有更多数据啦~'

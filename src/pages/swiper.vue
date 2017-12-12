@@ -1,9 +1,9 @@
 <template>
   <div class="swiper-page" v-title data-title="swiper">
     <p>正常swiper</p>
-    <x-swiper type='swiper' :items='items' :styles="{height: '180px'}"></x-swiper>
+    <x-swiper type='swiper' :items='items' :styles="{height: '200px'}"></x-swiper>
     <p>缩略swiper</p>
-    <x-swiper type='swiper' :items='items' :type="'thum'" :styles="{height: '208px'}"></x-swiper>
+    <x-swiper type='swiper' :items='items' :type="'thum'" :styles="{height: '240px'}"></x-swiper>
   </div>
 </template>
 
@@ -12,8 +12,11 @@ export default {
   data () {
     return {
       items: [
-        'http://p.yujiangongyu.com/758aaf73-a35b-4e89-839e-b715ba6bee9d.jpg',
-        'https://pic.ziroom.com/house_images/g2/M00/53/27/v180x135_ChAFD1mQVAqANGJ4ACVWgRBv5E8984.JPG'
+        require('assets/beauty_1.png'),
+        require('assets/beauty_2.png'),
+        require('assets/beauty_3.png'),
+        require('assets/beauty_4.png'),
+        require('assets/beauty_5.png')
       ],
     }
   }

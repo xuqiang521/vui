@@ -32,35 +32,9 @@ npm run build --report
 
 # Usage of components
 
-## dropdown
-
-```html
-<template>
-  <div class="test">
-    <x-dropdown trigger="click" @command="commandHandle" :hide-on-click="true">
-        <span class="drop-down_link">下拉菜单</span>
-        <x-dropdown-menu>
-            <x-dropdown-list command="a">下拉列表1</x-dropdown-list>
-            <x-dropdown-list command="b">下拉列表2</x-dropdown-list>
-            <x-dropdown-list command="c"><h4>下拉列表3</h4></x-dropdown-list>
-        </x-dropdown-menu>
-    </x-dropdown>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'Dropdown',
-  methods: {
-    commandHandle (command, instance) {
-      console.log(command, instance);
-    }
-  }
-}
-</script>
-```
-
 ## swiper
+
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/swiper.gif)
 
 ```html
 <template>
@@ -77,8 +51,11 @@ export default {
   data () {
     return {
       items: [
-        'http://p.yujiangongyu.com/758aaf73-a35b-4e89-839e-b715ba6bee9d.jpg',
-        'https://pic.ziroom.com/house_images/g2/M00/53/27/v180x135_ChAFD1mQVAqANGJ4ACVWgRBv5E8984.JPG'
+        require('assets/beauty_1.png'),
+        require('assets/beauty_2.png'),
+        require('assets/beauty_3.png'),
+        require('assets/beauty_4.png'),
+        require('assets/beauty_5.png')
       ],
     }
   }
@@ -93,6 +70,8 @@ export default {
 ```
 
 ## scroller
+
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/scroller.gif)
 
 ```html
 <style scoped>
@@ -155,6 +134,8 @@ export default {
 ```
 
 ## search
+
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/search.gif)
 
 #### 1、只有搜索框
 
@@ -410,8 +391,11 @@ export default {
 }
 </script>
 ```
+## dialog
 
-## message
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/dialog.gif)
+
+### message
 
 ```javascript
 /**
@@ -430,7 +414,7 @@ this.$dialog.msg({msg: 'hello message components ~'})
 // <x-message msg="hello message components ~"></x-message>
 ```
 
-## modal
+### modal
 
 ```javascript
 /**
@@ -491,14 +475,25 @@ export default {
 
 ## table
 
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/table.png)
+
 ```html
 <template>
-  <x-table :tableData="items">
-    <x-table-column prop="date" label="日期"></x-table-column>
-    <x-table-column prop="own" label="本客房(度)"></x-table-column>
-    <x-table-column prop="common" label="公共分摊(度)"></x-table-column>
-    <x-table-column prop="total" label="合计(度)"></x-table-column>
-  </x-table>
+  <div class="table" v-title data-title="table">
+    <x-scroller
+      :on-refresh="refresh"
+      :on-infinite="infinite"
+      :noDataText="noDataText"
+      class="table-content"
+    >
+      <x-table :tableData="items">
+        <x-table-column prop="list_1" label="LIST ONE"></x-table-column>
+        <x-table-column prop="list_2" label="LIST TWO"></x-table-column>
+        <x-table-column prop="list_3" label="LIST THREE"></x-table-column>
+        <x-table-column prop="list_4" label="LIST FOUR"></x-table-column>
+      </x-table>
+    </x-scroller>
+  </div>
 </template>
 
 <script>
@@ -507,24 +502,43 @@ export default {
     return {
       items: [
         {
-          date: '2017.11.01',
-          own: 1.52,
-          common: 0.13,
-          total: 1.65
+          list_1: '2017.12.09',
+          list_2: '路人1',
+          list_3: '爱过',
+          list_4: '有'
         },
         {
-          date: '2017.11.02',
-          own: 1.52,
-          common: 0.13,
-          total: 1.65
+          list_1: '2017.12.10',
+          list_2: '路人2',
+          list_3: '爱过',
+          list_4: '有'
         },
         {
-          date: '2017.11.03',
-          own: 1.52,
-          common: 0.13,
-          total: 1.65
+          list_1: '2017.12.11',
+          list_2: '路人3',
+          list_3: '爱过',
+          list_4: '没有'
+        },
+        {
+          list_1: '2017.12.12',
+          list_2: '路人4',
+          list_3: '爱过',
+          list_4: '没有'
         }
-      ]
+      ],
+      noDataText: '没有更多数据啦~'
+    }
+  },
+  methods: {
+    refresh (done) {
+      setTimeout(done, 1000)
+      this.noDataText = ''
+      console.log('refresh');
+    },
+    infinite (done) {
+      setTimeout(done, 1000, true)
+      this.noDataText = '没有更多数据啦~'
+      console.log('infinite');
     }
   }
 }
@@ -532,6 +546,8 @@ export default {
 ```
 
 ## picker
+
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/picker.gif)
 
 ```javascript
  /**
@@ -679,6 +695,8 @@ export default {
 
 ## select
 
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/select.gif)
+
 ```javascript
 props: {
   // 数据
@@ -754,5 +772,35 @@ export default {
   }
 };
 </script>
+```
 
+
+## dropdown
+
+![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/dropdown.png)
+
+```html
+<template>
+  <div class="test">
+    <x-dropdown trigger="click" @command="commandHandle" :hide-on-click="true">
+        <span class="drop-down_link">下拉菜单</span>
+        <x-dropdown-menu>
+            <x-dropdown-list command="a">下拉列表1</x-dropdown-list>
+            <x-dropdown-list command="b">下拉列表2</x-dropdown-list>
+            <x-dropdown-list command="c"><h4>下拉列表3</h4></x-dropdown-list>
+        </x-dropdown-menu>
+    </x-dropdown>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Dropdown',
+  methods: {
+    commandHandle (command, instance) {
+      console.log(command, instance);
+    }
+  }
+}
+</script>
 ```

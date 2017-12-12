@@ -18,7 +18,7 @@
     }
     th, td {
       font-size 14px
-      border 1px solid #F2F2F2
+      border 1px solid #CCC
       text-align center
     }
   }
