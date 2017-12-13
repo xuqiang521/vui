@@ -1,50 +1,3 @@
-
-## vui
-
-[![Version](https://img.shields.io/npm/v/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![Downloads](http://img.shields.io/npm/dm/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![License](https://img.shields.io/npm/l/x-vui.svg?style=flat)](https://opensource.org/licenses/MIT) [![TravisCI](https://travis-ci.org/XadillaX/x-vui.svg)](https://travis-ci.org/XadillaX/x-vui)
-<!-- [![Dependency](https://david-dm.org/XadillaX/x-vui.svg)](https://david-dm.org/XadillaX/x-vui) -->
-
-> It's a A personal Vue UI component library .
-
-## Install
-
-```bash
-npm install x-vui -S
-```
-
-## Quick Start
-
-```javascript
-import {
-  XScroller,
-  XSelect
-  // ...
-} from 'x-vui'
-
-Vue.component(XScroller.name, XScroller)
-Vue.component(XSelect.name, XSelect)
-```
-
-## Running of this Project
-
-``` bash
-# clone the project vui
-git clone https://github.com/xuqiang521/vui.git
-
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-
 # Existing components
 
 - [x] [dropdown](https://github.com/xuqiang521/vui/tree/master/src/components/dropdown)
@@ -54,7 +7,7 @@ npm run build --report
 - [x] [message](https://github.com/xuqiang521/vui/tree/master/src/components/dialog/message)
 - [x] [modal](https://github.com/xuqiang521/vui/tree/master/src/components/dialog/modal)
 - [x] [table](https://github.com/xuqiang521/vui/tree/master/src/components/table)
-- [x] [picker](https://github.com/xuqiang521/vui/tree/master/src/components/picker)
+- [ ] [picker](https://github.com/xuqiang521/vui/tree/master/src/components/picker)
 - [x] [select](https://github.com/xuqiang521/vui/tree/master/src/components/select)
 
 # Usage of components
