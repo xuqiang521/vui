@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xuqiang521/muy-element-ui.git"
+    "url": "git+https://github.com/xuqiang521/vui.git"
   },
   "keywords": [
     "element",
@@ -20,7 +20,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xuqiang521/muy-element-ui/issues"
+    "url": "https://github.com/xuqiang521/vui/issues"
   },
   "dependencies": {
     "vue": "^2.5.2",
