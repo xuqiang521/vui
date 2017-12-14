@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-const MsgConstructor = Vue.extend(require('./Message.vue'));
+const MsgConstructor = Vue.extend(require('./Message.vue').default);
 
 const instance = new MsgConstructor().$mount(document.createElement('div'));
 

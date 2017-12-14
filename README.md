@@ -14,15 +14,41 @@ npm install x-vui -S
 
 ## Quick Start
 
+### Import Components (Only for a part)
+
 ```javascript
 import {
-  XScroller,
-  XSelect
+  Scroller,
+  Select
   // ...
 } from 'x-vui'
 
-Vue.component(XScroller.name, XScroller)
-Vue.component(XSelect.name, XSelect)
+Vue.component(Scroller.name, Scroller)
+Vue.component(Select.name, Select)
+```
+
+### Fully import
+
+```javascript
+import { VUICOMS } from 'x-vui'
+
+VUICOMS.map(component => {
+  Vue.component(component.name, component)
+})
+```
+
+### Import Plugins
+
+```javascript
+import {
+  $msg,
+  $modal
+} from 'x-vui'
+
+Vue.prototype.$dialog = {
+  msg: $msg,
+  modal: $modal
+}
 ```
 
 ## Running of this Project
@@ -418,6 +444,7 @@ export default {
 }
 </script>
 ```
+
 ## dialog
 
 ![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/dialog.gif)
@@ -437,8 +464,6 @@ export default {
  * }
  */
 this.$dialog.msg({msg: 'hello message components ~'})
-// or after register global message component
-// <x-message msg="hello message components ~"></x-message>
 ```
 
 ### modal
@@ -472,31 +497,71 @@ this.$dialog.modal({
 })
 ```
 
-`or after register global message component`
+after register global message component, then you can use it customize your own modal
 
 ```html
+<style lang="stylus">
+.dialog-page {
+  .dialog-btn {
+    width 100%
+    position absolute
+    top 50%
+    left 0
+    transform translateY(-50%)
+    > p {
+      width 80%
+      height 50px
+      line-height 50px
+      margin 40px auto 0
+      border 1px solid #CCC
+      border-radius 10px
+      font-size 16px
+      font-weight bold
+      letter-spacing 2px
+      text-align center
+      &:first-child {
+        margin-top 0
+      }
+    }
+  }
+  .modal-text {
+    text-align: center;
+  }
+}
+</style>
 <template>
-  <x-modal
-    title="Demo Modal"
-    cancelText="取消"
-    okText="确定"
-    content="测试，测试，测试，测试，测试，测试，测试，测试，测试"
-    :onOK="okFn"
-    :onCancel="cancelFn"
-  ></x-modal>
+  <div class="dialog-page">
+    <div class="dialog-btn">
+      <p @click="message">message dialog</p>
+      <p @click="open">modal dialog</p>
+    </div>
+    <x-modal title="完成带看" cancelText="取消" :onCancel="close" :show="selectModel" okText="确认" :onOk="close">
+      <p class="modal-text">modal components test is awesome!!!</p>  
+    </x-modal>
+  </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      selectModel: false
+    }
+  },
   methods: {
-    okFn () {
-      console.log('click ok btn to do someting');
+    message () {
+      return this.$dialog.msg({msg: 'this is a message dialog'})
     },
-    cancelFn () {
-      console.log('click cancel btn to do someting');
+    open () {
+      this.selectModel = true
+    },
+    close () {
+      this.selectModel = false
     }
   }
 }
+</script>
+
 </script>
 ```
 

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-const ModalConstructor = Vue.extend(require('./Modal.vue'));
+const ModalConstructor = Vue.extend(require('./Modal.vue').default);
 
 const instance = new ModalConstructor({
   el: document.createElement('div'),
