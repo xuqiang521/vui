@@ -54,10 +54,6 @@ export default {
       type: Boolean,
       default: true
     },
-    auto: {
-      type: Number,
-      default: 0
-    },
     styles: {
       type: Object,
       default: function () {

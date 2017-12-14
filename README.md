@@ -497,7 +497,7 @@ this.$dialog.modal({
 })
 ```
 
-after register global message component, then you can use it customize your own modal
+after register global modal component, then you can use it customize your own modal
 
 ```html
 <style lang="stylus">
@@ -535,7 +535,7 @@ after register global message component, then you can use it customize your own 
       <p @click="message">message dialog</p>
       <p @click="open">modal dialog</p>
     </div>
-    <x-modal title="完成带看" cancelText="取消" :onCancel="close" :show="selectModel" okText="确认" :onOk="close">
+    <x-modal title="Demo Modal" cancelText="取消" :onCancel="close" :show="selectModel" okText="确认" :onOk="close">
       <p class="modal-text">modal components test is awesome!!!</p>  
     </x-modal>
   </div>
@@ -560,8 +560,6 @@ export default {
     }
   }
 }
-</script>
-
 </script>
 ```
 
