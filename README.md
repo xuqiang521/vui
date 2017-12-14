@@ -14,7 +14,7 @@ npm install x-vui -S
 
 ## Quick Start
 
-### Import Components (Only for a part)
+### Import Components (Only for part)
 
 ```javascript
 import {
@@ -83,7 +83,7 @@ npm run build --report
 - [x] [picker](https://github.com/xuqiang521/vui/tree/master/src/components/picker)
 - [x] [select](https://github.com/xuqiang521/vui/tree/master/src/components/select)
 
-# Usage of components
+# Usage of vui
 
 ## swiper
 

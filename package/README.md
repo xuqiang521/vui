@@ -14,7 +14,7 @@ npm install x-vui -S
 
 ## Quick Start
 
-### Import Components (Only for a part)
+### Import Components (Only for part)
 
 ```javascript
 import {
