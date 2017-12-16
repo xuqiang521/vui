@@ -926,7 +926,7 @@ export default {
 |---------- |-------- |---------- |-------------  |-------- |
 | width  | switch的宽度（像素）    | number/string   | — | 60 |
 | disabled  | 是否禁用    | boolean   | — | false   |
-| value  | switch初始化选择状态    | boolean/number/string   | — | 60 |
+| value  | switch初始化选择状态    | boolean/number/string   | — | 0 |
 | active-color  | switch 打开时的背景色    | string   | — | #ff6f5c |
 | inactive-color  | switch 关闭时的背景色    | string   | — | #999 |
 
