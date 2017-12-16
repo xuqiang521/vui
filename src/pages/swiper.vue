@@ -1,9 +1,9 @@
 <template>
   <div class="swiper-page" v-title data-title="swiper">
     <p>正常swiper</p>
-    <x-swiper type='swiper' :items='items' :styles="{height: '200px'}"></x-swiper>
+    <x-swiper :items='items' :styles="{height: '200px'}" @change="changeHandle"></x-swiper>
     <p>缩略swiper</p>
-    <x-swiper type='swiper' :items='items' :type="'thum'" :styles="{height: '240px'}"></x-swiper>
+    <x-swiper type='thum' :items='items' :styles="{height: '240px'}"></x-swiper>
   </div>
 </template>
 
@@ -18,6 +18,11 @@ export default {
         require('assets/beauty_4.png'),
         require('assets/beauty_5.png')
       ],
+    }
+  },
+  methods: {
+    changeHandle (index) {
+      console.log(index);
     }
   }
 }

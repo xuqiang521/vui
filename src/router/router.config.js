@@ -9,7 +9,7 @@ const table    = r => require.ensure([], () => r(require('pages/table')), 'table
 const picker   = r => require.ensure([], () => r(require('pages/picker')), 'picker')
 const select   = r => require.ensure([], () => r(require('pages/select')), 'select')
 const dialog   = r => require.ensure([], () => r(require('pages/dialog')), 'dialog')
-const test     = r => require.ensure([], () => r(require('pages/test')), 'test')
+const Switch   = r => require.ensure([], () => r(require('pages/switch')), 'switch')
 
 let routers = [];
 routers = [
@@ -68,9 +68,9 @@ routers = [
         component: dialog,
       },
       {
-        path: 'test',
-        name: 'test',
-        component: test,
+        path: 'switch',
+        name: 'switch',
+        component: Switch,
       }
     ]
   }

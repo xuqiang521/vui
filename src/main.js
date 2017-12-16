@@ -40,7 +40,6 @@ components.map(component => {
   Vue.component(component.name, component)
 })
 
-console.log(Msg)
 
 Vue.prototype.$dialog = {
   msg: Msg,

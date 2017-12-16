@@ -38,4 +38,3 @@ help:
 	@echo "   \033[35mmake new <component-name> [中文名]\033[0m\t---  创建新全局组件 生成对应文件  例如 'make new button 'button组件'"
 	@echo "   \033[35mmake del <component-name> \033[0m\t\033[0m\t---  删除组件 删除对应文件  例如 'make del button'"
 	@echo "   \033[35mmake dev\033[0m\t\033[0m\t\033[0m\t\033[0m\t---  开发模式"
-	@echo "   \033[35mmake http\033[0m\t\033[0m\t\033[0m\t\033[0m\t---  静态服务模式"

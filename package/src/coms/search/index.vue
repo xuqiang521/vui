@@ -40,7 +40,7 @@
   }
 </style>
 <template>
-  <div class="x-search" :style="styles" :clear="clear">
+  <div class="x-search" :style="styles">
     <form action="#" onsubmit="return false;">
       <input type="search"
         ref="input"

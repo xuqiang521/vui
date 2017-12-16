@@ -73,7 +73,6 @@ npm run build --report
 
 # Existing components
 
-- [x] [dropdown](https://github.com/xuqiang521/vui/tree/master/src/components/dropdown)
 - [x] [swiper](https://github.com/xuqiang521/vui/tree/master/src/components/swiper)
 - [x] [scroller](https://github.com/xuqiang521/vui/tree/master/src/components/scroller)
 - [x] [search](https://github.com/xuqiang521/vui/tree/master/src/components/search)
@@ -82,6 +81,8 @@ npm run build --report
 - [x] [table](https://github.com/xuqiang521/vui/tree/master/src/components/table)
 - [x] [picker](https://github.com/xuqiang521/vui/tree/master/src/components/picker)
 - [x] [select](https://github.com/xuqiang521/vui/tree/master/src/components/select)
+- [x] [switch](https://github.com/xuqiang521/vui/tree/master/src/components/switch)
+- [x] [dropdown](https://github.com/xuqiang521/vui/tree/master/src/components/dropdown)
 
 # Usage of vui
 
@@ -89,13 +90,32 @@ npm run build --report
 
 ![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/swiper.gif)
 
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| type  | swiper类型    | string   | swiper(正常)/thum(缩略) | swiper |
+| auto  | 自动播放时长    | number   | — | 5000 |
+| items  | swiper展示的列表    | array   | — | [] |
+| showIndicators  | 是否展示swiper小圆点    | boolean   | — | true |
+| styles  | swiper样式控制  |  object  | — | {}   |
+| resetTitle  | 重置title内容  |  string  | — | —   |
+
+### Events
+
+| 事件名称      | 说明    | 回调参数      |
+|---------- |-------- |---------- |
+| change  | swiper滑动回调    | 当前swiper item索引 |
+
+### 用法
+
 ```html
 <template>
   <div class="swiper-page">
     <p>正常swiper</p>
-    <x-swiper type='swiper' :items='items' :styles="{height: '180px'}"></x-swiper>
+    <x-swiper :items='items' :styles="{height: '180px'}"></x-swiper>
     <p>缩略swiper</p>
-    <x-swiper type='swiper' :items='items' :type="'thum'" :styles="{height: '208px'}"></x-swiper>
+    <x-swiper type='thum' :items='items' :styles="{height: '208px'}"></x-swiper>
   </div>
 </template>
 
@@ -125,6 +145,26 @@ export default {
 ## scroller
 
 ![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/scroller.gif)
+
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| onRefresh  | 下拉回调    | function   | — | — |
+| onInfinite  | 上拉回调    | function   | — | — |
+| width  | scroller宽度    | string   | — | 100% |
+| height  | scroller高度    | string   | — | 100% |
+| isLoadMore  | 是否展示上拉加载  |  boolean  | — | true   |
+| refreshText  | 下拉文本内容  |  string  | — | 下拉刷新   |
+| noDataText  | 无数据文本    | string   | — | 没有更多数据啦~   |
+| refreshLayerColor  | 下拉文本颜色    | string   | — | #AAA |
+| loadingLayerColor  | 上拉文本颜色     | string   | — | #AAA |
+| animating  | 是否有动画    | boolean   | — | true |
+| animationDuration  | 动画间隔    | number   | — | 250 |
+| bouncing  | 是否有反弹效果    | string   | — | true |
+| cssClass  | content css class    | string   | — | —   |
+
+### 用法
 
 ```html
 <style scoped>
@@ -189,6 +229,27 @@ export default {
 ## search
 
 ![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/search.gif)
+
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| async  | 是否进行节流    | boolean   | — | true |
+| timeout  | 搜索节流时长    | number   | — | 100 |
+| styles  | search样式  |  object  | — | —   |
+| placeholder  | placeholder  |  string  | — | '搜索'   |
+| autofocus  | 是否自动聚焦(iOS端autofocus无效)    | boolean   | — | —   |
+| clear  | 进行搜索是否清空search框内容    | boolean   | — | false   |
+
+### Events
+
+| 事件名称      | 说明    | 回调参数      |
+|---------- |-------- |---------- |
+| search  | search搜索回调    | 搜索文本 |
+| enter  | enter时搜索回调    | 搜索文本 |
+| close  | 点击搜索关闭按钮回调    | '' |
+
+### 用法
 
 #### 1、只有搜索框
 
@@ -363,7 +424,6 @@ export default {
     </x-search>
   </div>
 </template>
-
 <script>
 export default {
   data () {
@@ -449,40 +509,37 @@ export default {
 
 ![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/dialog.gif)
 
-### message
+### Attributes(message)
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| msg  | msg文本内容    | string   | — | — |
+| timeout  | msg显示时长    | number | —   | 2000  |
+| callback  | 回调函数    | function   | — | —   |
+| icon  | 特殊icon    | string   | — | —   |
+
+### 用法
 
 ```javascript
-/**
- * props {
- *   msg: String,  // 消息
- *   timeout: {
- *     type: Number,
- *     default: 2000
- *   },  // message消失延时时长
- *   callback: Function,  // 回调
- *   icon: String,  // 信息开头是否有特殊icon
- * }
- */
 this.$dialog.msg({msg: 'hello message components ~'})
 ```
 
-### modal
+### Attributes(modal)
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| show  | modal是否显示    | boolean   | — | — |
+| title  | modal标题  |  string  | — | —   |
+| content  | modal内容  |  string  | — | —   |
+| onOk  | 确定按钮回调    | function   | — | —   |
+| onCancel  | 取消按钮回调    | function   | — | —   |
+| okText  | 确定按钮内容    | string   | — | —   |
+| cancelText  | 取消按钮内容    | string   | — | —   |
+| showCloseIcon  | 是否显示关闭icon    | boolean   | — | true   |
+
+### 用法(插件)
 
 ```javascript
-/**
- *
- * show: Boolean,
- * title: String,
- * onOk: Function,
- * content: String,
- * onCancel: Function,
- * cancelText: String,
- * okText: String,
- * showCloseIcon: {
- *   type: Boolean,
- *   default: true
- * }
- */
 this.$dialog.modal({
   title: 'Demo Modal',
   cancelText: '取消',
@@ -497,7 +554,7 @@ this.$dialog.modal({
 })
 ```
 
-after register global modal component, then you can use it customize your own modal
+### modal组件用法
 
 ```html
 <style lang="stylus">
@@ -536,11 +593,10 @@ after register global modal component, then you can use it customize your own mo
       <p @click="open">modal dialog</p>
     </div>
     <x-modal title="Demo Modal" cancelText="取消" :onCancel="close" :show="selectModel" okText="确认" :onOk="close">
-      <p class="modal-text">modal components test is awesome!!!</p>  
+      <p class="modal-text">modal components test is awesome!!!</p>
     </x-modal>
   </div>
 </template>
-
 <script>
 export default {
   data () {
@@ -566,6 +622,16 @@ export default {
 ## table
 
 ![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/table.png)
+
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| tableData  | table数据    | array   | — | — |
+| label  | thead标题（TableColum）    | — | —   |
+| prop  | 绑定的数据    | string   | — | —   |
+
+### 用法
 
 ```html
 <template>
@@ -639,36 +705,30 @@ export default {
 
 ![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/picker.gif)
 
-```javascript
- /**
-  * type = 'date' 日期选择器
-  * type = 'time' 时间选择器
-  * type = 'datetime' 日期时间选择器
-  * type = 'custom' 普通选择器
-  **/
-props: {
-  // 时间选择粒度，仅限有时间的选择器，默认为1分钟的粒度
-  timeStep: Number,
-  // 选择器弹窗标题
-  title: String,
-  // 起始年份 默认为今年
-  startYear: [Number, String],
-  // 结束年份 默认起始开始算10年的范围
-  endYear: [Number, String],
-  // 起始日期  类似 '2017-12-10'
-  startDate: String,
-  // 结束日期 验证同起始日期
-  endDate: String
-  // 起始时间 0-23
-  startHour: [Number, String],
-  // 结束时间 1-23
-  endHour: [Number, String],
-  // 起始分钟 0-59
-  startMinute: [Number, String],
-  // 结束分钟 1-59
-  endMinute: [Number, String]
-}
-```
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| default  | picker默认选中的值    | string/number   | — | — |
+| type  | picker类型    | string   | date/time/datetime/custom | datetime |
+| title  | 选择器弹窗标题    | string   | — | —   |
+| placeholder  | placeholder    | string   | — | 请选择时间   |
+| timeStep  | 时间选择粒度(有分钟的选择器)   | number   | — | 1 |
+| startYear  | 起始年份    | number/string   | — | 今年 |
+| endYear  | 结束年份    | number/string   | — | 10年的范围 |
+| startDate  | 起始日期    | string   | — | — |
+| endDate  | 结束日期    | string   | — | — |
+| startHour  | 起始时间    | number/string   | — | 0 |
+| endHour  | 结束时间    | number/string   | — | 23 |
+| startMinute  | 起始分钟    | number/string   | — | 0 |
+| endMinute  | 结束分钟    | number/string   | — | 59 |
+| yearFormat  | “年“的格式化    | string   | — | '{value}年' |
+| monthFormat  | “月“的格式化    | string   | — | '{value}月' |
+| dayFormat  | “日“的格式化    | string   | — | '{value}日' |
+| hourFormat  | “时“的格式化    | string   | — | '{value}时' |
+| minuteFormat  | “分“的格式化    | string   | — | '{value}分' |
+
+### 用法
 
 ```html
 <style lang="stylus">
@@ -721,7 +781,6 @@ props: {
   }
 }
 </style>
-
 <template>
 <div class="picker-page" v-title data-title="picker">
   <ul class='x-list'>
@@ -787,28 +846,24 @@ export default {
 
 ![](https://raw.githubusercontent.com/xuqiang521/vui/master/src/assets/select.gif)
 
-```javascript
-props: {
-  // 数据
-  selectData: Array,
-  // 默认显示的标题
-  title: String,
-  // 是否一直显示默认标题
-  alwaysShowTitle: Boolean,
-  // 默认选中的值
-  defaultValue: [Number, String],
-  // select组件的宽度，默认继承父元素100%的width
-  width: {
-    type: String,
-    default: '100%'
-  },
-  // select文字超过多出省略号的宽度
-  ellipsisWidth: {
-    type: String,
-    default: '120px'
-  }
-},
-```
+
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| selectData  | 下拉数据    | array   | — | [] |
+| title  | 默认显示的标题    | string   | — | ''   |
+| alwaysShowTitle  | 是否一直显示默认标题    | boolean   | — | false |
+| defaultValue  | 默认选中的值    | number/string   | — | 0 |
+| width  | select组件的宽度    | string   | — | '100%' |
+| ellipsisWidth  | select文字超过多出省略号的宽度    | string   | — | '120px' |
+
+### Events
+| 事件名称      | 说明    | 回调参数      |
+|---------- |-------- |---------- |
+| search  | select 选择时的回调函数    | 参数1：索引，参数2：所中项的id值 |
+
+### 用法
 
 ```html
 <template>
@@ -831,7 +886,6 @@ props: {
     ></x-select>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -864,6 +918,55 @@ export default {
 </script>
 ```
 
+## switch
+
+### Attributes
+
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| width  | switch的宽度（像素）    | number/string   | — | 60 |
+| disabled  | 是否禁用    | boolean   | — | false   |
+| value  | switch初始化选择状态    | boolean/number/string   | — | 60 |
+| active-color  | switch 打开时的背景色    | string   | — | #ff6f5c |
+| inactive-color  | switch 关闭时的背景色    | string   | — | #999 |
+
+### Events
+| 事件名称      | 说明    | 回调参数      |
+|---------- |-------- |---------- |
+| change  | switch 状态发生变化时的回调函数    | 新状态的值 |
+
+### 用法
+
+```html
+<style lang="stylus">
+.switch-page {
+  margin: 100px;
+}
+</style>
+
+<template>
+<div class="switch-page" v-title data-title="switch">
+  <x-switch
+    @change="handleChange"
+    :disabled="false"
+    value="0"
+    width="60"
+    activeColor="#13ce66"
+    inactiveColor="#ff4949"
+  ></x-switch>
+</div>
+</template>
+
+<script>
+export default {
+  methods: {
+    handleChange (val) {
+      console.log(val)
+    }
+  }
+}
+</script>
+```
 
 ## dropdown
 

@@ -2,7 +2,7 @@
   <div class="x-swiper" :style="styles">
     <div class="x-default-swiper" @click="swiperClick">
       <x-swipe
-        :auto="0"
+        :auto="auto"
         :defaultIndex="currentIndex"
         :showIndicators="showIndicators"
         @change="changeIndex"
@@ -38,11 +38,11 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'thum'
+      default: 'swiper'
     },
     auto: {
       type: Number,
-      default: 3000
+      default: 5000
     },
     items: {
       type: Array,
@@ -97,6 +97,7 @@ export default {
     },
     changeIndex (newIndex) {
       this.currentIndex = newIndex
+      this.$emit('change', newIndex)
     },
     changeThumIndex (newIndex) {
       this.currentThumIndex = newIndex
