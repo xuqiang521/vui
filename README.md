@@ -925,10 +925,11 @@ export default {
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | width  | switch的宽度（像素）    | number/string   | — | 60 |
+| height  | switch的高度（像素）    | number/string   | — | — |
 | disabled  | 是否禁用    | boolean   | — | false   |
 | value  | switch初始化选择状态    | boolean/number/string   | — | 0 |
-| active-color  | switch 打开时的背景色    | string   | — | #ff6f5c |
-| inactive-color  | switch 关闭时的背景色    | string   | — | #999 |
+| activeClass  | switch 打开时的class    | string   | — | avtive |
+| inactiveClass  | switch 关闭时的class    | string   | — | inactive |
 
 ### Events
 | 事件名称      | 说明    | 回调参数      |
@@ -937,33 +938,56 @@ export default {
 
 ### 用法
 
+**注：如果未使用v-model指令进行值的双向绑定，则switch会显示value值对应的位置，但不能进行on-off操作**
+
 ```html
 <style lang="stylus">
+@import '../stylus/_common.styl';
 .switch-page {
-  margin: 100px;
+	.x-switch {
+		margin-top: -7px;
+	}
 }
 </style>
 
 <template>
-<div class="switch-page" v-title data-title="switch">
-  <x-switch
-    @change="handleChange"
-    :disabled="false"
-    value="0"
-    width="60"
-    activeColor="#13ce66"
-    inactiveColor="#ff4949"
-  ></x-switch>
-</div>
+	<div class="switch-page" v-title data-title="switch">
+		<ul class='x-list'>
+      <li>
+        <label>默认switch，值：{{val1}}</label>
+    		<div><x-switch v-model="val1"></x-switch></div>
+      </li>
+      <li>
+        <label>设置宽高，默认选中，值：{{val2}}</label>
+    		<div><x-switch @change="handleChange" v-model="val2" width="50" height="30"></x-switch></div>
+      </li>
+      <li>
+        <label>禁止点击，值：{{val3}}</label>
+    		<div><x-switch :disabled="true"></x-switch></div>
+      </li>
+      <li>
+        <label>禁止点击，值：{{val4}}</label>
+    		<div><x-switch :disabled="true" v-model="val4"></x-switch></div>
+      </li>
+    </ul>
+	</div>
 </template>
 
 <script>
 export default {
-  methods: {
-    handleChange (val) {
-      console.log(val)
-    }
-  }
+	data () {
+		return {
+			val1: true,
+			val2: false,
+			val3: false,
+			val4: true,
+		}
+	},
+	methods: {
+		handleChange (val, oldVal) {
+			console.log('val:'+val, 'oldVal:'+oldVal)
+		}
+	}
 }
 </script>
 ```
