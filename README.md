@@ -51,26 +51,6 @@ Vue.prototype.$dialog = {
 }
 ```
 
-## Running of this Project
-
-``` bash
-# clone the project vui
-git clone https://github.com/xuqiang521/vui.git
-
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-
 # Existing components
 
 - [x] [swiper](https://github.com/xuqiang521/vui/tree/master/src/components/swiper)
@@ -1020,4 +1000,23 @@ export default {
   }
 }
 </script>
+```
+
+## Running of this Project
+
+``` bash
+# clone the project vui
+git clone https://github.com/xuqiang521/vui.git
+
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
