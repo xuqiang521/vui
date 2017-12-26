@@ -1,8 +1,8 @@
 
 ## vui
 
-[![Version](https://img.shields.io/npm/v/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![Downloads](http://img.shields.io/npm/dm/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![License](https://img.shields.io/npm/l/x-vui.svg?style=flat)](https://opensource.org/licenses/MIT) [![TravisCI](https://travis-ci.org/XadillaX/x-vui.svg)](https://travis-ci.org/xuqiang521/x-vui)
-<!-- [![Dependency](https://david-dm.org/xuqiang521/x-vui.svg)](https://david-dm.org/XadillaX/x-vui) -->
+[![Version](https://img.shields.io/npm/v/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![Downloads](http://img.shields.io/npm/dm/x-vui.svg)](https://www.npmjs.com/package/x-vui) [![License](https://img.shields.io/npm/l/x-vui.svg?style=flat)](https://opensource.org/licenses/MIT) [![TravisCI](https://travis-ci.org/xuqiang521/vui.svg)](https://travis-ci.org/xuqiang521/x-vui)
+<!-- [![Dependency](https://david-dm.org/xuqiang521/x-vui.svg)](https://david-dm.org/xuqiang521/x-vui) -->
 
 > It's a A personal Vue UI component library .
 
